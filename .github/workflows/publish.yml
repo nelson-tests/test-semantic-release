@@ -21,6 +21,7 @@ jobs:
       id: 'semantic-release'
       uses: cycjimmy/semantic-release-action@v3.4.1
       with:
+        node-version: 14
         semantic_version: 19.0.5
         extra_plugins: |
           semantic-release-plugin-csproj
