@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: Semantic Release
       id: 'semantic-release'
-      uses: cycjimmy/semantic-release-action@v3.4.1
+      uses: cycjimmy/semantic-release-action@v3.4.2
       with:
         semantic_version: 19.0.5
         extra_plugins: |
@@ -30,3 +30,11 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: "Debug"
+      run: |
+        echo ${{ steps.semantic.outputs.new_release_version }}
+        echo ${{ steps.semantic.outputs.new_release_major_version }}
+        echo ${{ steps.semantic.outputs.new_release_minor_version }}
+        echo ${{ steps.semantic.outputs.new_release_patch_version }}
+        echo ${{ steps.semantic.outputs.new_release_published }}
